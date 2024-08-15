@@ -44,10 +44,9 @@
         directionalLight.position.set(5, 10, 7).normalize();
         scene.add(directionalLight);
 
-        // Create Clouds
-        const cloudTexture = new THREE.TextureLoader().load('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxglj0sAAAAASUVORK5CYII=');
-        const cloudMaterial = new THREE.MeshBasicMaterial({ map: cloudTexture, transparent: true });
-        const cloudGeometry = new THREE.PlaneGeometry(10, 10);
+        // Create Simple Clouds
+        const cloudMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.8 });
+        const cloudGeometry = new THREE.PlaneGeometry(10, 5);
         const clouds = [];
         for (let i = 0; i < 10; i++) {
             const cloud = new THREE.Mesh(cloudGeometry, cloudMaterial);
